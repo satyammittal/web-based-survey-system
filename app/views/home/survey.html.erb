@@ -1,0 +1,24 @@
+<h1>Listing Surveys</h1>
+
+<table class="table table-striped table-condensed">
+  <thead>
+    <tr class="success">
+      <th>Survey Name</th>
+      <th>Created at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @surveys.each do |survey| %>
+    <% if !@completed.find_by_fullsurvey_id(survey.id) %>
+      <tr>
+        <td>  <%= link_to survey.name, showsurvey_home_path(:type => survey.id),class:"btn btn-primary",style:"background-color:white" %></td>
+        <% if  @Question.find_by_fullsurvey_id(survey.id) %>
+        <% end %>
+        <td><%= survey.created_at %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>

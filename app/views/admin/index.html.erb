@@ -1,0 +1,47 @@
+<div class="iconcontainer">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="iconbox">
+        <div class="iconbox-icon">
+          <span class="glyphicon glyphicon-user"></span>
+        </div>
+        <%= link_to "Users", users_path,class:"btn btn-success btn-block btn-lg" %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="iconbox">
+        <div class="iconbox-icon">
+          <span class="glyphicon glyphicon-book"></span>
+        </div>
+        <%= link_to "Surveys", index_fullsurvey_path,class:"btn btn-success btn-block btn-lg" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="iconbox">
+        <div class="iconbox-icon">
+          <span class="glyphicon glyphicon-comment"></span>
+        </div>
+        <%= link_to "Questions", questions_path,class:"btn btn-success btn-block btn-lg" %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="iconbox">
+        <div class="iconbox-icon">
+          <span class="glyphicon glyphicon-book"></span>
+        </div>
+        <%= link_to "Options", choices_path,class:"btn btn-success btn-block btn-lg" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+  <div class="iconbox">
+    <div class="iconbox-icon">
+      <span class="glyphicon glyphicon-tasks"></span>
+    </div>
+    <%= link_to "Responses", adminshow_inactive_survey_path,class:"btn btn-success btn-block btn-lg" %>
+  </div>
+</div>
+</div>

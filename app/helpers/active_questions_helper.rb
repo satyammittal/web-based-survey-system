@@ -1,0 +1,2 @@
+module ActiveQuestionsHelper
+end

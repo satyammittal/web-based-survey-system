@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+  <table class="table">
+    <thead>
+      <th>Question</th>
+        <th>your response</th>
+      </thead>
+      <tbody>
+        <% @surveys.each do |inactive| %>
+         <tr>
+             <td><%= inactive.choice.question.question %></td>
+            <td><%= inactive.choice.options %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </body>
+  </html>

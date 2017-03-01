@@ -1,0 +1,1 @@
+json.array! @active_questions, partial: 'active_questions/active_question', as: :active_question

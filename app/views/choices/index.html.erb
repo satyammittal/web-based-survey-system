@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Choices</h1>
+
+<table class="table table-striped table-condensed">
+  <thead>
+    <tr class="success">
+      <th>Options</th>
+      <th>Question</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @choices.each do |choice| %>
+    <% if choice.question %>
+      <tr>
+        <td><%= choice.options %></td>
+        <td><%= choice.question.question %></td>
+        <td><%= link_to 'Show', choice %></td>
+        <td><%= link_to 'Edit', edit_choice_path(choice) %></td>
+        <td><%= link_to 'Destroy', choice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <%end%>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Choice', new_choice_path %>

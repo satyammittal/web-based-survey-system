@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+  <center>
+<div >
+    <div class="row" >
+  <% @Question.each do |question| %>
+  <% if not @surveys.find_by_question_id(question.id) %>
+
+
+               <div class="col-md-6">
+
+                   <div class="panel panel-primary" id="basepanel1">
+                       <div class="panel-heading">                         QUESTION:<span style="margin:  10px"><%= question.question %></span>
+                         <%= time_ago_in_words(question.created_at) %> ago
+                       </div>
+                       <div class="panel-body">
+                           <p id="basequestion">Options</p>
+                           <% question.choice.each do |choice| %>
+                        <!--   <div class="radio">
+                               <label>
+                                   <input type="radio" id="a1" name="g1" value="option1">a1
+                               </label>
+                           </div>-->
+                           <CENTER>
+                            <%= link_to choice.options, create_inactive_survey_path(:type => choice.id),class:"btn btn-primary",style:"background-color:white;color:black" %><br/>
+                          </CENTER><% end %></td>
+
+                       </div>
+                   </div>
+               </div>
+
+           <%end%>
+         <% end %>
+         </div>
+</div>
+</center>
+</body>
+</html>

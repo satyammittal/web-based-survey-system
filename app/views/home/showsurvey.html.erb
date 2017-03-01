@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+  <center>
+<div >
+<% if $a !=0 %>
+  <%= form_tag madesurvey_path do |f| %>
+  <% $arr.each_with_index do |arr, i| %>
+  <% if not @surveys.find_by_question_id(@Question[i].id) %>
+  <%= fields_for 'parr[]', arr do  |f| %>
+  <div class="row" style="margin-left:30%">
+
+               <div class="col-md-6">
+                   <div class="panel panel-primary" id="basepanel1">
+                       <div class="panel-heading">
+                                          QUESTION:<span style="margin:  10px"><%= @Question[i].question %></span>
+
+                       </div>
+                       <div class="panel-body">
+                         <% if @Question[i].questype ==1 %>
+                          <%= f.select :choice_id, options_for_select(@Question[i].choice.collect {|p| [ p.options,p.id ]})%>
+                           <p id="basequestion"><%= time_ago_in_words(@Question[i].created_at) %> ago</p>
+                          <% else %>
+                          <%= f.text_field :choice_id %>
+
+                          <% end %>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <% end %>
+           <% end %>
+           <% end %>
+           <div class="actions">
+             <%= submit_tag %>
+           </div>
+           <%end%>
+
+
+<%else%>
+this is empty
+         <% end %>
+</div>
+</center>
+</body>
+</html>

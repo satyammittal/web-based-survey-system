@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Foreign Keys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Options,questions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foreign_keys.each do |foreign_key| %>
+      <tr>
+        <td><%= foreign_key.options,questions %></td>
+        <td><%= link_to 'Show', foreign_key %></td>
+        <td><%= link_to 'Edit', edit_foreign_key_path(foreign_key) %></td>
+        <td><%= link_to 'Destroy', foreign_key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Foreign key', new_foreign_key_path %>

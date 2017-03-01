@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Questions</h1>
+
+<table class="table table-striped table-condensed">
+  <thead >
+    <tr class="success">
+      <th>Question</th>
+      <th>Created at</th>
+      <th>Survey</th>
+      <th>question type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.question %></td>
+        <td><%= question.created_at %></td>
+        <td><% if Fullsurvey.find_by_id(question.fullsurvey_id) %>
+        <%= Fullsurvey.find_by_id(question.fullsurvey_id).name %>
+        <% end %></td>
+        <td><%= question.questype %></td>
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question', new_question_path %>

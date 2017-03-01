@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Responses</h1>
+
+<table class="table table-striped table-condensed">
+  <thead>
+    <tr class="success">
+      <th>Response</th>
+      <th>created_at</th>
+      <th>Question </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @isurvey.each do |isurvey| %>
+    <% if isurvey.choice %>
+    <tr>
+       <td><%= isurvey.choice.options %></td>
+       <td><%= isurvey.choice.created_at %></td>
+       <td><%= isurvey.choice.question.question %></td>
+     </tr>
+     <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
